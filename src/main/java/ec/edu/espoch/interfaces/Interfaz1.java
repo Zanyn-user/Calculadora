@@ -26,7 +26,7 @@ public class Interfaz1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        btmgOperaciones = new javax.swing.ButtonGroup();
         lblTitulo = new javax.swing.JLabel();
         lblNumero1 = new javax.swing.JLabel();
         lblNumero2 = new javax.swing.JLabel();
@@ -37,24 +37,17 @@ public class Interfaz1 extends javax.swing.JFrame {
         lblResultadoCalculado = new javax.swing.JLabel();
         cbxOperaciones = new javax.swing.JComboBox<>();
         lblOperaciones = new javax.swing.JLabel();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        rbSumar = new javax.swing.JRadioButton();
+        rbRestar = new javax.swing.JRadioButton();
+        rbMultiplicar = new javax.swing.JRadioButton();
+        rbDivision = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
 
         lblTitulo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         lblTitulo.setText("CALCULADORA");
-        lblTitulo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         lblNumero1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         lblNumero1.setText("INGRESE EL PRMER NUMERO: ");
@@ -107,38 +100,77 @@ public class Interfaz1 extends javax.swing.JFrame {
         lblOperaciones.setText("OPERACIONES:");
         lblOperaciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        btmgOperaciones.add(rbSumar);
+        rbSumar.setText("Sumar");
+        rbSumar.setBorder(null);
+        rbSumar.setBorderPainted(true);
+        rbSumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbSumarActionPerformed(evt);
+            }
+        });
+
+        btmgOperaciones.add(rbRestar);
+        rbRestar.setText("Restar");
+        rbRestar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rbRestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbRestarActionPerformed(evt);
+            }
+        });
+
+        btmgOperaciones.add(rbMultiplicar);
+        rbMultiplicar.setText("Multiplicar");
+        rbMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMultiplicarActionPerformed(evt);
+            }
+        });
+
+        btmgOperaciones.add(rbDivision);
+        rbDivision.setText("Division");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btmCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(92, 92, 92)
+                            .addComponent(lblOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(83, 83, 83)
+                            .addComponent(cbxOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(240, 240, 240)
+                            .addComponent(lblTitulo)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(143, 143, 143)
-                                        .addComponent(btmCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(cbxOperaciones, 0, 1, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lblNumero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblNumero2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(83, 83, 83)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txtNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblResultadoCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtNum1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(lblTitulo)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblNumero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblNumero2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(83, 83, 83)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblResultadoCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNum1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(rbSumar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(rbRestar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(rbMultiplicar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(rbDivision)
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +181,13 @@ public class Interfaz1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOperaciones)
                     .addComponent(cbxOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbSumar)
+                    .addComponent(rbRestar)
+                    .addComponent(rbMultiplicar)
+                    .addComponent(rbDivision))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNumero1)
@@ -160,12 +198,11 @@ public class Interfaz1 extends javax.swing.JFrame {
                     .addComponent(txtNum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblResultado)
-                        .addGap(49, 49, 49)
-                        .addComponent(btmCalcular))
+                    .addComponent(lblResultado)
                     .addComponent(lblResultadoCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 103, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(btmCalcular)
+                .addGap(101, 101, 101))
         );
 
         pack();
@@ -180,7 +217,31 @@ public class Interfaz1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int num1 = Integer.parseInt(txtNum1.getText());
         int num2 = Integer.parseInt(txtNum2.getText());
-        String opcion = (String) cbxOperaciones.getSelectedItem();
+        boolean suma = rbSumar.isSelected();
+        boolean resta = rbRestar.isSelected();
+        boolean multiplicar = rbMultiplicar.isSelected();
+        boolean Division = rbDivision.isSelected();
+        
+        if (suma) {
+            Integer Suma = num1 + num2;
+            lblResultado.setText(Suma.toString());
+        } else if (resta){
+            Integer Resta = num1- num2;
+            lblResultado.setText(Resta.toString());  
+        } else if (multiplicar){
+            Integer mult = num1 * num2;
+        lblResultadoCalculado.setText(mult.toString());
+        } else if(Division){
+            if ( num2 == 0) {
+                        lblResultadoCalculado.setText("Error");
+                    } else {
+                        Integer dividir = num1 / num2;
+        lblResultadoCalculado.setText(dividir.toString());
+            }
+        }
+            
+        
+        /*String opcion = (String) cbxOperaciones.getSelectedItem();
         
         
         switch (opcion) {
@@ -211,7 +272,7 @@ public class Interfaz1 extends javax.swing.JFrame {
 
             default:
                 throw new AssertionError();
-        }
+        }*/
         
         
     }//GEN-LAST:event_btmCalcularActionPerformed
@@ -224,6 +285,18 @@ public class Interfaz1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNum2ActionPerformed
 
+    private void rbSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSumarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbSumarActionPerformed
+
+    private void rbRestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbRestarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbRestarActionPerformed
+
+    private void rbMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMultiplicarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbMultiplicarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,14 +304,18 @@ public class Interfaz1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btmCalcular;
+    private javax.swing.ButtonGroup btmgOperaciones;
     private javax.swing.JComboBox<String> cbxOperaciones;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblNumero1;
     private javax.swing.JLabel lblNumero2;
     private javax.swing.JLabel lblOperaciones;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblResultadoCalculado;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JRadioButton rbDivision;
+    private javax.swing.JRadioButton rbMultiplicar;
+    private javax.swing.JRadioButton rbRestar;
+    private javax.swing.JRadioButton rbSumar;
     private javax.swing.JTextField txtNum1;
     private javax.swing.JTextField txtNum2;
     // End of variables declaration//GEN-END:variables
